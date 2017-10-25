@@ -1,0 +1,11 @@
+{
+  "server": {
+    "port": 3000
+  },
+  "database": {
+    "mongo": "mongodb://homestead:secret@127.0.0.1:27017",
+    "mysql": {},
+    "redis":{},
+    "elasticsearch":{}
+  }
+}

@@ -1,0 +1,34 @@
+<table class="table table-bordred table-striped">
+    <thead>
+    <th ng-click="sort('fio')">FIO <i class="fa fa-sort pull-right" ng-show="sortKey=='fio'"
+                                      ng-class="{'fa fa-sort-desc':reverse,'fa fa-sort-asc':!reverse}"></i>
+    </th>
+    <th ng-click="sort('work_area')">Work Area <i class="fa fa-sort pull-right"
+                                                  ng-show="sortKey=='work_area'"
+                                                  ng-class="{'fa fa-sort-desc':reverse,'fa fa-sort-asc':!reverse}"></i>
+    </th>
+    <th ng-click="sort('salary')">Salary <i class="fa fa-sort pull-right" ng-show="sortKey=='salary'"
+                                            ng-class="{'fa fa-sort-desc':reverse,'fa fa-sort-asc':!reverse}"></i>
+    </th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    <tr dir-paginate="user in users|orderBy:sortKey:reverse|filter:search|itemsPerPage:5">
+        <td ng-click="view(user)">{{user.fio}}</td>
+        <td ng-click="view(user)">{{user.work_area}}</td>
+        <td ng-click="view(user)">{{user.salary}}</td>
+        <td class="center-block">
+            <button class="btn btn-success" ng-click="edit(user)"><i class="fa fa-edit"></i>
+            </button>
+            <button class="btn btn-warning" ng-click="delete(user)"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div class="pull-right">
+    <dir-pagination-controls
+            max-size="5"
+            direction-links="true"
+            boundary-links="true">
+    </dir-pagination-controls>
+</div>

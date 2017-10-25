@@ -1,0 +1,24 @@
+<!-- profile -->
+<div ng-hide="hideProfile">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <h4 class="small pull-right">{{staff.work_area}}</h4>
+                    <h3>
+                        {{staff.fio}}</h3>
+                    <p>
+                        Birthday {{staff.bd | date:'MM/dd/yyyy'}}
+                        <br/>
+                        Salary {{staff.salary}}
+                        <br/>
+                        Start work: {{staff.start_date | date:'MM/dd/yyyy'}}
+                        <br/>
+                        Create record: {{staff.created_date | date:'MM/dd/yyyy'}}</p>
+                    <button class="btn-default pull-right" ng-click="hideProfileInfo()"> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end profile-->
